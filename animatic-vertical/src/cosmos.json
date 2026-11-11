@@ -1,0 +1,21 @@
+{
+ "corte": 45.24,
+ "llega": 73.6,
+ "fin": 75.9,
+ "R": 960,
+ "frena": 5,
+ "acelera": { "etapa": 4, "cuanto": 0.32 },
+ "etapas": [
+  { "src": "p5/1-red.jpg", "w": 1837, "h": 2019, "entra": [0.5, 0.5, 0.44], "sale": [0.458, 0.49, 0.1375], "apaga": [-0.5, 0.4], "escala": "10²⁵ m", "nombre": "LA RED CÓSMICA" },
+  { "src": "p5/1b-galaxias.jpg", "w": 3840, "h": 2160, "entra": [0.485, 0.649, 0.3], "sale": [0.485, 0.649, 0.09], "modo": "luz", "pre": 0.8, "post": 0.3, "apaga": [-0.2, 0.9], "escala": "10²³ m", "nombre": "UN CÚMULO DE GALAXIAS" },
+  { "src": "p5/2-galaxia.jpg", "w": 4096, "h": 4096, "entra": [0.49, 0.5048, 4.05], "sale": [0.6758, 0.6717, 0.1292], "modo": "luz", "pre": 0.6, "post": 0.3, "escala": "10²¹ m", "nombre": "UNA GALAXIA" },
+  { "src": "p5/3-estrella.jpg", "w": 4096, "h": 4096, "entra": [0.5, 0.5, 0.5], "sale": [0.5, 0.5, 0.06], "pre": 0.2, "post": 0.2, "apaga": [-1.0, -0.2], "escala": "10¹⁹ m", "nombre": "UNA ESTRELLA" },
+  { "src": "p5/4-tierra.jpg", "w": 4096, "h": 4096, "entra": [0.5, 0.5, 8.46], "sale": [0.5702, 0.2553, 0.1383], "modo": "luz", "pre": 1.4, "post": 0.2, "escala": "10⁷ m", "nombre": "LA TIERRA" },
+  { "src": "p5/4b-huracan.jpg", "w": 3000, "h": 3000, "entra": [0.5, 0.5, 0.5], "sale": [0.508, 0.507, 0.075], "pre": 0.25, "post": 0.25, "escala": "10⁶ m", "nombre": "UN HURACÁN" },
+  { "src": "p5/4c-ojo-huracan.jpg", "w": 5322, "h": 3558, "entra": [0.57, 0.45, 0.42], "sale": [0.57, 0.45, 0.2], "pre": 0.6, "post": 0.3, "escala": "10⁵ m", "nombre": "EL OJO DEL HURACÁN" },
+  { "src": "p5/5-ojo.jpg", "w": 3973, "h": 2150, "entra": [0.405, 0.52, 0.395], "sale": [0.41, 0.515, 0.144], "pre": 0.5, "post": 0.45, "apaga": [-0.15, 0.35], "escala": "10⁻² m", "nombre": "UN OJO" },
+  { "src": "p5/6-retina.png", "w": 4288, "h": 2848, "entra": [0.497, 0.492, 0.4416], "sale": [0.3615, 0.4607, 0.1], "modo": "recorte", "pre": 0.5, "post": 0.2, "escala": "10⁻³ m", "nombre": "LA RETINA" },
+  { "src": "p5/7-neuronas.jpg", "w": 4096, "h": 4096, "entra": [0.5, 0.5, 0.5], "sale": [0.58, 0.5, 0.25], "pre": 0.45, "post": 0.45, "escala": "10⁻⁴ m", "nombre": "NEURONAS" },
+  { "src": "p5/1-red.jpg", "w": 1837, "h": 2019, "entra": [0.5, 0.5, 0.44], "sale": [0.5, 0.5, 0.36], "pre": 0.6, "post": 0.6, "escala": "10²⁵ m", "nombre": "LA RED CÓSMICA" }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "titulo": 54.42,
+ "corteGalaxia": 45.24,
+ "clips": {
+  "m74": {
+   "desde": 44.64,
+   "hasta": 54.12,
+   "cuadros": 270,
+   "carpeta": "m74"
+  }
+ }
+}

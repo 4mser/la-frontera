@@ -1,0 +1,40 @@
+{
+  "fps": 30,
+  "total": 129.5,
+  "musica": "audio/existir.wav",
+  "voz": [1.2, 6.0, 8.5, 11.0, 21.0, 23.4, 27.8, 34.4, 38.0, 39.5, 44.0, 48.2, 52.4, 57.8, 61.8, 64.2, 79.0, 84.0, 89.2, 95.0, 98.8, 103.0, 107.5, 111.8, 115.6, 118.4],
+  "punto": 0.6,
+  "detente": 6.0,
+  "aqui": 9.0,
+  "planos": [
+    ["galaxia",   0.0,  10.7],
+    ["ojo",      10.7,  14.2],
+    ["tierra",   14.2,  17.1],
+    ["campo",    17.1,  21.0],
+    ["alma",     21.0,  27.8],
+    ["chladni",  27.8,  34.4],
+    ["flammarion", 34.4, 38.0],
+    ["kepler",   38.0,  48.2],
+    ["fractal",  48.2,  52.4],
+    ["vida",     52.4,  57.8],
+    ["pilares",  57.8,  64.2],
+    ["webb",     64.2,  71.0],
+    ["mitosis",  71.0,  74.3],
+    ["abrazo",   74.3,  79.0],
+    ["neurona",  79.0,  84.0],
+    ["andromeda", 84.0, 89.2],
+    ["girasol",  89.2,  95.0],
+    ["sol",      95.0,  98.8],
+    ["formula",  98.8, 103.0],
+    ["multiplica", 103.0, 107.5],
+    ["cielo",   107.5, 115.6],
+    ["punto",   115.6, 121.8],
+    ["titulo",  121.8, 129.5]
+  ],
+  "golpes": {
+    "punto": 0.6, "despierta": 3.6, "aqui": 9.04, "foto": 10.7, "roca": 14.2, "estrella": 16.1, "galaxias": 17.1,
+    "cielo": 21.0, "cancion": 27.8, "siglos": 34.4, "razon": 38.0, "ninguna": 45.6, "universo": 48.2, "regla": 52.4,
+    "contrario": 61.8, "piensa": 64.2, "materia": 71.0, "amar": 74.3, "somos": 79.0, "aprendemos": 84.0, "flor": 89.2,
+    "estrellas": 95.0, "explicacion": 98.8, "multiplica": 104.4, "quizas": 107.5, "sinceramente": 115.6, "extraordinario": 119.4, "titulo": 122.6
+  }
+}

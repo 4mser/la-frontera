@@ -1,0 +1,28 @@
+{
+  "fps": 30,
+  "total": 129,
+  "voz": [4.0, 13.2, 25.0, 45.6, 63.6, 72.2, 86.6, 93.0, 116.2],
+  "t": {
+    "corazon": 0.6,
+    "taco24": 3.0,
+    "zoom1h": 11.6,
+    "zoom5m": 18.6,
+    "chf": 23.2,
+    "dfa": 28.4,
+    "dfaFin": 34.6,
+    "silencio1": 37.2,
+    "enrollar": 40.0,
+    "punto": 44.2,
+    "titulo": 51.4,
+    "tituloFin": 57.6,
+    "formula": 59.2,
+    "orbitas": 67.4,
+    "corte": 80.8,
+    "puntos": 81.4,
+    "conjunto": 84.0,
+    "respira": 86.0,
+    "deriva": 92.0,
+    "borde": 112.6,
+    "fin": 126.4
+  }
+}

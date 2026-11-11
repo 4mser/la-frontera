@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>La frontera · Guion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=block" rel="stylesheet">
+<style>
+:root{
+  --negro:#07060f; --tinta:#0d0b1c; --crema:#fff4de; --durazno:#ee8c78; --magenta:#b04080;
+  --cian:#96dee2; --violeta:#46185c; --gris:#a49cb5; --linea:rgba(255,244,222,.14);
+}
+@page{size:1600px 900px;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--negro);color:var(--crema);font-family:"Space Grotesk",sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.p{width:1600px;height:900px;position:relative;overflow:hidden;page-break-after:always;break-after:page;background:var(--negro)}
+.p:last-child{page-break-after:auto}
+.mono{font-family:"IBM Plex Mono",monospace}
+.serif{font-family:"Instrument Serif",serif}
+.k{font-family:"IBM Plex Mono",monospace;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--durazno)}
+.folio{position:absolute;bottom:34px;right:56px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.2em;color:rgba(255,244,222,.38)}
+.marca{position:absolute;bottom:30px;left:56px;width:92px;opacity:.85}
+.logo-in{display:block;width:100%;container-type:inline-size}
+.logo-in img{display:block;width:100%;height:auto;filter:drop-shadow(0 0 14px rgb(10 92 255/.55)) drop-shadow(0 0 2px rgb(190 215 255/.6))}
+.logo-l{position:relative;display:block;width:97.04cqw;height:9.4cqw;margin:4.1cqw 0 0 .49cqw}
+.logo-l span{position:absolute;top:0;left:calc(var(--i) / 7 * (97.04cqw - 5.29cqw));font-family:"Space Grotesk",sans-serif;font-weight:300;font-size:8.54cqw;line-height:1.1;color:#f4f5f7;text-shadow:0 0 14px rgb(10 92 255/.75)}
+.grano-off::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* portada */
+.portada img.fondo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.portada .velo{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,6,15,.96) 0%,rgba(7,6,15,.82) 30%,rgba(7,6,15,.1) 62%,rgba(7,6,15,0) 100%)}
+.portada .t{position:absolute;left:96px;top:150px;width:720px}
+.portada h1{font-weight:700;font-size:150px;line-height:.86;letter-spacing:-.045em;margin:26px 0 30px}
+.portada h1 span{display:block;font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:-.01em;font-size:96px;color:var(--durazno);margin-bottom:6px}
+.portada .sub{font-size:25px;line-height:1.45;color:rgba(255,244,222,.82);max-width:560px}
+.portada .pie{position:absolute;left:96px;bottom:70px;display:flex;gap:48px;font-family:"IBM Plex Mono",monospace;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,244,222,.6)}
+.portada .pie b{display:block;color:var(--crema);font-weight:500;font-size:16px;margin-top:6px;letter-spacing:.06em}
+.portada .marca{left:auto;right:72px;bottom:62px;width:190px;opacity:1}
+
+/* idea */
+.idea{padding:96px 96px}
+.idea .cita{font-family:"Instrument Serif",serif;font-style:italic;font-size:86px;line-height:1.02;letter-spacing:-.01em;max-width:1150px;margin:28px 0 64px}
+.idea .cita em{color:var(--durazno)}
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.tres div{border-top:1px solid var(--linea);padding-top:22px}
+.tres .n{font-family:"IBM Plex Mono",monospace;color:var(--cian);font-size:14px;letter-spacing:.2em}
+.tres h3{font-size:30px;font-weight:600;margin:10px 0 10px;letter-spacing:-.01em}
+.tres p{font-size:19px;line-height:1.5;color:rgba(255,244,222,.75)}
+
+/* formato */
+.formato{display:grid;grid-template-columns:1.05fr 1fr;height:100%}
+.formato .izq{padding:96px 64px 96px 96px;display:flex;flex-direction:column;justify-content:center}
+.formato h2{font-size:58px;line-height:1.02;letter-spacing:-.03em;font-weight:600;margin:22px 0 28px}
+.formato h2 i{font-family:"Instrument Serif",serif;font-weight:400;color:var(--durazno)}
+.formato p{font-size:21px;line-height:1.55;color:rgba(255,244,222,.8);margin-bottom:16px}
+.datos{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:20px;border-top:1px solid var(--linea)}
+.datos div{padding:18px 0;border-bottom:1px solid var(--linea)}
+.datos b{display:block;font-size:36px;font-weight:600;letter-spacing:-.02em}
+.datos span{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+.formato .der{position:relative}
+.formato .der img{position:absolute;left:0;top:0;width:100%;height:calc(100% - 92px);object-fit:cover}
+.formato .der .leyenda{position:absolute;left:0;right:0;bottom:0;height:92px;padding:22px 28px 0;background:var(--negro);border-top:1px solid var(--linea)}
+
+/* mapa */
+.mapa{padding:92px 96px}
+.mapa h2{font-size:64px;font-weight:600;letter-spacing:-.03em;margin:20px 0 70px}
+.linea-t{display:grid;grid-template-columns:repeat(10,1fr);gap:10px;position:relative}
+.linea-t::before{content:"";position:absolute;left:0;right:0;top:9px;height:1px;background:linear-gradient(90deg,var(--magenta),var(--durazno),var(--crema),var(--cian),var(--magenta))}
+.cap{position:relative;padding-top:34px}
+.cap::before{content:"";position:absolute;top:-5px;left:-8px;width:29px;height:29px;border-radius:50%;background:radial-gradient(circle,#fff4de 0,#fff4de 6px,rgba(238,140,120,.45) 7.5px,rgba(238,140,120,0) 14px)}
+.cap .tt{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--gris)}
+.cap h4{font-size:22px;font-weight:600;line-height:1.15;margin:10px 0 16px;letter-spacing:-.01em}
+.cap p{font-family:"Instrument Serif",serif;font-style:italic;font-size:25px;line-height:1.16;color:rgba(255,244,222,.86)}
+.mapa .nota{margin-top:84px;display:flex;gap:44px;font-size:19px;color:rgba(255,244,222,.7);line-height:1.5}
+.mapa .nota div{flex:1;border-left:2px solid var(--magenta);padding-left:18px}
+.mapa .nota b{color:var(--crema)}
+
+/* capitulos */
+.capitulo{display:grid;grid-template-columns:820px 1fr;height:100%}
+.capitulo.inv{grid-template-columns:1fr 820px}
+.capitulo.inv .vis{order:2}
+.vis{position:relative;overflow:hidden;background:#000}
+.vis>img{position:absolute;left:0;right:0;top:0;bottom:92px;width:100%;height:calc(100% - 92px);object-fit:cover}
+.vis .tira,.vis .latido{bottom:92px}
+.vis .leyenda{position:absolute;left:0;right:0;bottom:0;height:92px;padding:22px 28px 0;background:var(--negro);border-top:1px solid var(--linea)}
+.leyenda{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;line-height:1.55;color:rgba(255,244,222,.85)}
+.leyenda b{color:var(--cian);font-weight:500;letter-spacing:.18em}
+.texto{padding:70px 72px 70px 64px;display:flex;flex-direction:column;justify-content:center}
+.capitulo.inv .texto{padding:70px 56px 70px 88px}
+.capitulo.inv~.folio{right:auto;left:56px}
+.capitulo:not(.inv)~.folio{right:56px}
+.num{font-family:"Instrument Serif",serif;font-style:italic;font-size:30px;color:var(--durazno)}
+.texto h2{font-size:56px;line-height:.98;font-weight:700;letter-spacing:-.035em;margin:6px 0 10px;text-transform:uppercase}
+.meta{display:flex;gap:18px;align-items:center;font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.14em;color:var(--gris);text-transform:uppercase;margin-bottom:26px}
+.meta i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--magenta)}
+.voz{border-left:1px solid var(--linea);padding-left:24px}
+.voz p{font-family:"Instrument Serif",serif;font-size:25px;line-height:1.3;color:var(--crema);margin-bottom:12px}
+.voz p.peq{font-size:22px}
+.voz p.clave{font-style:italic;color:var(--durazno);font-size:30px;line-height:1.18}
+.pantalla{margin-top:20px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.6;color:rgba(255,244,222,.58)}
+.pantalla b{color:var(--cian);font-weight:500;letter-spacing:.16em}
+.pregunta{margin-top:22px;padding-top:16px;border-top:1px solid var(--linea);font-size:16px;color:rgba(255,244,222,.66)}
+.pregunta b{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:11.5px;letter-spacing:.2em;color:var(--magenta);display:block;margin-bottom:5px}
+.pregunta span{font-family:"Instrument Serif",serif;font-style:italic;font-size:23px;color:var(--crema)}
+.denso .voz p{font-size:22px;margin-bottom:9px}
+.denso .voz p.clave{font-size:26px}
+.denso .texto h2{font-size:48px}
+
+/* julia strip */
+.tira{position:absolute;left:0;right:0;top:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:#000}
+.tira figure{position:relative;overflow:hidden}
+.tira img{width:100%;height:100%;object-fit:cover}
+.tira figcaption{position:absolute;left:16px;top:14px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.14em;color:rgba(255,244,222,.86)}
+.tira figcaption b{display:inline-block;padding:3px 8px;border-radius:20px;margin-right:6px;font-weight:500}
+.dentro b{background:rgba(150,222,226,.18);color:var(--cian)}
+.fuera b{background:rgba(238,140,120,.2);color:var(--durazno)}
+
+/* latido */
+.latido{position:absolute;left:0;right:0;top:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 55%,#1a0f2a 0%,#07060f 70%)}
+.latido svg{width:100%;height:auto}
+
+/* rigor */
+.rigor{padding:84px 96px}
+.rigor h2{font-size:54px;font-weight:600;letter-spacing:-.03em;margin:18px 0 14px}
+.rigor .bajada{font-size:21px;color:rgba(255,244,222,.75);max-width:1100px;line-height:1.5;margin-bottom:40px}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.caja{background:rgba(255,244,222,.035);border:1px solid var(--linea);border-radius:18px;padding:28px 28px 24px}
+.caja .et{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.caja h3{font-size:26px;font-weight:600;margin:10px 0 14px;letter-spacing:-.01em}
+.caja ul{list-style:none}
+.caja li{font-size:16.5px;line-height:1.45;color:rgba(255,244,222,.78);padding:8px 0;border-top:1px solid rgba(255,244,222,.08)}
+.caja li i{font-family:"IBM Plex Mono",monospace;font-style:normal;font-size:12px;color:var(--gris);display:block;margin-top:2px}
+
+/* produccion */
+.prod{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:84px 96px}
+.prod h2{font-size:46px;font-weight:600;letter-spacing:-.03em;margin:16px 0 22px}
+.prod h4{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--cian);margin:22px 0 10px}
+.prod p,.prod li{font-size:18px;line-height:1.5;color:rgba(255,244,222,.8)}
+.prod ul{list-style:none}
+.prod li{padding:5px 0 5px 18px;position:relative}
+.prod li::before{content:"";position:absolute;left:0;top:15px;width:6px;height:6px;border-radius:50%;background:var(--durazno)}
+.paleta{display:flex;gap:10px;margin-top:12px}
+.paleta i{display:block;width:62px;height:62px;border-radius:12px}
+
+/* fuentes */
+.fuentes{padding:76px 96px}
+.fuentes h2{font-size:46px;font-weight:600;letter-spacing:-.03em;margin:16px 0 30px}
+.fl{columns:2;column-gap:56px}
+.fl p{break-inside:avoid;font-size:17.5px;line-height:1.45;color:rgba(255,244,222,.78);padding:9px 0;border-top:1px solid rgba(255,244,222,.08)}
+.fl p b{color:var(--crema);font-weight:600}
+.fl p span{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.12em;color:var(--durazno);text-transform:uppercase;display:block;margin-bottom:2px}
+
+/* cierre */
+.cierre{background:#000}.cierre img.f{position:absolute;left:250px;top:-150px;width:1100px;height:733px;object-fit:cover}
+.cierre .c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.cierre .frase{font-family:"Instrument Serif",serif;font-style:italic;font-size:62px;line-height:1.05;margin-top:500px}
+.cierre .frase span{color:var(--durazno)}
+.cierre .m{display:block;width:250px;margin-top:44px}
+.cierre .k{margin-top:22px;color:rgba(255,244,222,.55)}
+</style>
+</head>
+<body>
+
+<!-- 1 · PORTADA -->
+<section class="p portada grano">
+  <img class="fondo" src="web/portada.jpg" alt="">
+  <div class="velo"></div>
+  <div class="t">
+    <div class="k">B&amp;N Lectures · Ensayo cinematográfico</div>
+    <h1><span>la</span>FRONTERA</h1>
+    <p class="sub">Una película corta sobre fractales, los límites de lo que podemos calcular y la forma del conocimiento.</p>
+  </div>
+  <div class="pie">
+    <div>Duración<b>≈ 11 min · 16:9</b></div>
+    <div>Guion<b>v7 · octubre 2026</b></div>
+    <div>Imagen<b>Real + calculada</b></div>
+  </div>
+  <img class="marca" src="web/lectures-logo.png" alt="B&amp;N Lectures"></span>
+</section>
+
+<!-- 2 · LA IDEA -->
+<section class="p idea grano">
+  <div class="k">La idea</div>
+  <p class="cita">Una fórmula que cabe en una línea dibuja una figura con detalle infinito. <em>Por mucho que te acerques, siempre aparece algo nuevo.</em></p>
+  <div class="tres">
+    <div><span class="n">01 · MATEMÁTICA</span><h3>El borde de una figura</h3><p>El conjunto de Mandelbrot: un borde tan arrugado que ocupa el plano, con preguntas abiertas hasta hoy.</p></div>
+    <div><span class="n">02 · HUMANA</span><h3>Las líneas que nos separan</h3><p>Richardson quiso medir fronteras para entender las guerras y descubrió que ninguna tiene un largo verdadero.</p></div>
+    <div><span class="n">03 · CONOCIMIENTO</span><h3>El límite de lo que sabemos</h3><p>Cada respuesta abre un borde nuevo, más fino que el anterior. El video empieza con un latido y termina con el mismo latido.</p></div>
+  </div>
+  <img class="marca" src="web/lectures-logo.png" alt="B&amp;N Lectures"></span><span class="folio">02</span>
+</section>
+
+<!-- 3 · FORMATO -->
+<section class="p grano">
+  <div class="formato">
+    <div class="izq">
+      <div class="k">Cómo se ve y cómo se escucha</div>
+      <h2>Lo real se filma.<br><i>Lo calculado se calcula.</i></h2>
+      <p>Imagen filmada en Chile y archivo científico abierto, unidos a simulaciones calculadas de verdad. El recurso central es el <i>match cut</i>: un romanesco real se funde con su crecimiento calculado, un delta visto desde un satélite se vuelve una simulación de ríos, el cielo profundo del Webb se vuelve la red cósmica.</p>
+      <p>Una sola voz, cercana y sin prisa. Música compuesta sobre el mismo mapa de tiempos. Cinco silencios totales.</p>
+      <div class="datos">
+        <div><b>10</b><span>capítulos</span></div>
+        <div><b>≈ 1.300</b><span>palabras de voz</span></div>
+        <div><b>0</b><span>imágenes inventadas</span></div>
+        <div><b>+20</b><span>fuentes científicas</span></div>
+      </div>
+    </div>
+    <div class="der">
+      <img src="web/caballitos.jpg" alt="">
+      <div class="leyenda"><b>CALCULADO</b> · Valle de los caballitos de mar, conjunto de Mandelbrot. Todas las imágenes de este documento se calcularon para él.</div>
+    </div>
+  </div>
+  <span class="folio" style="right:auto;left:96px">03</span>
+</section>
+
+<!-- 4 · MAPA -->
+<section class="p mapa grano">
+  <div class="k">El recorrido · una pregunta por capítulo</div>
+  <h2>Once minutos, diez preguntas</h2>
+  <div class="linea-t">
+    <div class="cap"><span class="tt">0:00</span><h4>El latido</h4><p>¿Estar vivo es vivir en el borde?</p></div>
+    <div class="cap"><span class="tt">1:10</span><h4>La regla</h4><p>¿La matemática se inventa o se descubre?</p></div>
+    <div class="cap"><span class="tt">2:20</span><h4>Hacia adentro</h4><p>¿Hay cosas que nunca podremos calcular?</p></div>
+    <div class="cap"><span class="tt">3:40</span><h4>Los mundos de Julia</h4><p>Cada punto contiene un mundo.</p></div>
+    <div class="cap"><span class="tt">4:20</span><h4>La frontera entre personas</h4><p>¿Las líneas que nos separan tienen un largo?</p></div>
+    <div class="cap"><span class="tt">5:40</span><h4>La vida</h4><p>¿Por qué la vida repite?</p></div>
+    <div class="cap"><span class="tt">7:10</span><h4>El cosmos</h4><p>¿Qué es una forma sin último nivel?</p></div>
+    <div class="cap"><span class="tt">8:20</span><h4>La mariposa</h4><p>¿Por qué la matemática describe el mundo?</p></div>
+    <div class="cap"><span class="tt">9:10</span><h4>La mente</h4><p>¿Pensar depende de sistemas al límite?</p></div>
+    <div class="cap"><span class="tt">10:10</span><h4>Epílogo</h4><p>¿Tiene fin el conocimiento?</p></div>
+  </div>
+  <div class="nota">
+    <div><b>Un solo hilo.</b> Cada capítulo aporta una sola idea a la pregunta central y no intenta explicar su disciplina completa.</div>
+    <div><b>Sin cortes bruscos.</b> Cada parte nace de la anterior: el zoom se vuelve Julia, Julia se vuelve costa, la costa se vuelve pulmón.</div>
+    <div><b>Dos viajes psicodélicos</b> largos, casi sin voz, donde mandan la imagen y la música.</div>
+  </div>
+  <img class="marca" src="web/lectures-logo.png" alt="B&amp;N Lectures"></span><span class="folio">04</span>
+</section>
+
+<!-- 5 · PRÓLOGO -->
+<section class="p grano">
+  <div class="capitulo">
+    <div class="vis">
+      <div class="latido">
+        <svg viewBox="0 0 820 900" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#b04080" stop-opacity="0"/><stop offset=".35" stop-color="#ee8c78"/><stop offset=".62" stop-color="#fff4de"/><stop offset="1" stop-color="#96dee2" stop-opacity="0"/></linearGradient>
+            
+          </defs>
+          <g fill="none" stroke="url(#g)" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke-width="26" opacity=".08" d="M0 470 L160 470 L190 462 L210 470 L250 470 L270 520 L300 250 L330 600 L355 440 L380 470 L520 470 L545 462 L565 470 L600 470 L615 500 L638 330 L660 560 L680 450 L700 470 L820 470"/><path stroke-width="14" opacity=".16" d="M0 470 L160 470 L190 462 L210 470 L250 470 L270 520 L300 250 L330 600 L355 440 L380 470 L520 470 L545 462 L565 470 L600 470 L615 500 L638 330 L660 560 L680 450 L700 470 L820 470"/><path stroke-width="7" opacity=".3" d="M0 470 L160 470 L190 462 L210 470 L250 470 L270 520 L300 250 L330 600 L355 440 L380 470 L520 470 L545 462 L565 470 L600 470 L615 500 L638 330 L660 560 L680 450 L700 470 L820 470"/>
+            <path stroke-width="3" d="M0 470 L160 470 L190 462 L210 470 L250 470 L270 520 L300 250 L330 600 L355 440 L380 470 L520 470 L545 462 L565 470 L600 470 L615 500 L638 330 L660 560 L680 450 L700 470 L820 470"/>
+          </g>
+          <circle cx="760" cy="470" r="5" fill="#fff4de"/><circle cx="760" cy="470" r="22" fill="#fff4de" opacity=".08"/><circle cx="760" cy="470" r="12" fill="#fff4de" opacity=".18"/>
+        </svg>
+      </div>
+      <div class="leyenda"><b>EN EL VIDEO</b> · Intervalos reales entre latidos (PhysioNet): un corazón sano y uno con insuficiencia cardíaca, con su medida calculada en vivo. Aquí, solo un trazo de diseño.</div>
+    </div>
+    <div class="texto">
+      <span class="num">Prólogo</span>
+      <h2>El latido</h2>
+      <div class="meta"><span>0:00 – 1:10</span><i></i><span>Hacer que la pregunta se sienta en el cuerpo</span></div>
+      <div class="voz">
+        <p>Esto es un corazón sano. Escúchalo bien: nunca late exactamente igual dos veces.</p>
+        <p class="peq">Durante mucho tiempo se pensó que un cuerpo sano era un cuerpo estable, como un reloj. Las mediciones mostraron algo más interesante. El latido sano fluctúa con un patrón parecido en escalas de tiempo muy distintas. En algunas enfermedades del corazón, y con la edad, ese patrón tiende a perderse.</p>
+        <p class="clave">Hay algo en el borde entre el orden y el caos que se parece mucho a estar vivo.</p>
+      </div>
+      <div class="pantalla"><b>EN PANTALLA</b> · Negro, solo el sonido del corazón. A cada escala aparecen fluctuaciones de distintos tamaños. La última frase va sin gráficos: es una lectura personal. Luego, el punto de luz dibuja el título.</div>
+    </div>
+  </div>
+  <span class="folio">05</span>
+</section>
+
+<!-- 6 · I LA REGLA -->
+<section class="p grano">
+  <div class="capitulo inv">
+    <div class="vis">
+      <img src="web/orbitas.jpg" alt="">
+      <div class="leyenda"><b>CALCULADO</b> · Millones de órbitas reales de z → z² + c acumuladas en una sola exposición (Buddhabrot).</div>
+    </div>
+    <div class="texto">
+      <span class="num">Capítulo I</span>
+      <h2>La regla</h2>
+      <div class="meta"><span>1:10 – 2:20</span><i></i><span>Presentar el misterio</span></div>
+      <div class="voz">
+        <p class="clave">Un número. Lo multiplicas por sí mismo y le sumas una constante. Y repites.</p>
+        <p class="peq">Algunos números, al repetir la regla, se van al infinito. Otros se quedan para siempre cerca de casa.</p>
+        <p class="peq">Todo lo que vas a ver cabe en esa línea. Nadie lo diseñó.</p>
+        <p class="peq">En 1980, en una computadora de IBM, Benoît Mandelbrot vio esta figura con nitidez por primera vez. Pero la figura ya estaba ahí, escondida en la regla. Roger Penrose la comparó con el Everest: nadie la inventó. Alguien llegó hasta ella.</p>
+        <p class="clave">Y si se llega hasta ella, ¿dónde estaba antes?</p>
+      </div>
+      <div class="pantalla"><b>EN PANTALLA</b> · z → z² + c escrita trazo a trazo, cada trazo un pulso que imita el latido. Cien mil puntos a la vez. Primer silencio total: aparece el conjunto.</div>
+    </div>
+  </div>
+  <span class="folio">06</span>
+</section>
+
+<!-- 7 · II HACIA ADENTRO -->
+<section class="p grano denso">
+  <div class="capitulo">
+    <div class="vis">
+      <img src="web/minibrot.jpg" alt="">
+      <div class="leyenda"><b>CALCULADO</b> · Un Mandelbrot completo, escondido en la antena del original, rodeado de detalles que el original no tiene.</div>
+    </div>
+    <div class="texto">
+      <span class="num">Capítulo II</span>
+      <h2>Hacia adentro</h2>
+      <div class="meta"><span>2:20 – 3:40</span><i></i><span>El límite de lo calculable</span></div>
+      <div class="voz">
+        <p>Lo que importa está en el borde. En 1998, Mitsuhiro Shishikura demostró que ese borde tiene dimensión dos: una línea tan arrugada que ocupa el plano entero.</p>
+        <p>Ninguna imagen puede mostrar todos sus detalles. Y hay un límite demostrado: aun con una máquina ideal, que calcula con números reales exactos, un programa puede confirmar que un punto escapa, pero ninguno puede decidir siempre si un punto se queda. La prueba usa justamente que el borde tenga dimensión dos.</p>
+        <p>Se sabe que la figura es de una sola pieza. Lo que nadie ha podido demostrar es que siga siéndolo de cerca, alrededor de cada uno de sus puntos.</p>
+        <p class="clave">Una línea de matemática, y ya no sabemos todo lo que contiene.</p>
+      </div>
+      <div class="pantalla"><b>EN PANTALLA</b> · Primer viaje psicodélico: quince segundos sin voz, color que fluye como pintura líquida. dim ∂M = 2 · Blum, Shub y Smale · Conjetura MLC: abierta.</div>
+    </div>
+  </div>
+  <span class="folio">07</span>
+</section>
+
+<!-- 8 · III JULIA -->
+<section class="p grano">
+  <div class="capitulo inv">
+    <div class="vis">
+      <div class="tira">
+        <figure><img src="web/julia0.jpg" alt=""><figcaption class="dentro"><b>DENTRO</b>c = −1</figcaption></figure>
+        <figure><img src="web/julia1.jpg" alt=""><figcaption class="dentro"><b>DENTRO</b>c = −0,123 + 0,745i</figcaption></figure>
+        <figure><img src="web/julia2.jpg" alt=""><figcaption class="dentro"><b>DENTRO</b>c = −0,391 − 0,587i</figcaption></figure>
+        <figure><img src="web/julia4.jpg" alt=""><figcaption class="fuera"><b>FUERA</b>c = −0,75 + 0,25i</figcaption></figure>
+      </div>
+    </div>
+    <div class="texto">
+      <span class="num">Capítulo III</span>
+      <h2>Los mundos de Julia</h2>
+      <div class="meta"><span>3:40 – 4:20</span><i></i><span>Expandir el universo visual</span></div>
+      <div class="voz">
+        <p class="clave">Cada punto de este mapa es la puerta a otro fractal.</p>
+        <p>Si el punto está dentro, su mundo queda unido. Si está fuera, se deshace en polvo.</p>
+      </div>
+      <div class="pantalla"><b>EN PANTALLA</b> · Segundo viaje psicodélico. Un punto entra y sale del Mandelbrot; a su lado, su conjunto de Julia en vivo, que se retuerce, se abre en espirales y se rompe en polvo solo al cruzar hacia afuera. Veinte segundos sin voz. Al final su contorno se aplana y se vuelve un mapa.</div>
+      <div class="pregunta"><b>CALCULADO</b><span>Cuatro valores de c: tres dentro del conjunto, uno fuera. Cada etiqueta se comprobó iterando la regla.</span></div>
+    </div>
+  </div>
+  <span class="folio">08</span>
+</section>
+
+<!-- 9 · IV FRONTERA ENTRE PERSONAS -->
+<section class="p grano denso">
+  <div class="capitulo">
+    <div class="vis">
+      <img src="web/costa.jpg" alt="">
+      <div class="leyenda"><b>CALCULADO</b> · Una costa fractal medida con dos reglas: la regla corta da una línea más larga. En el video, sobre costa chilena filmada con dron.</div>
+    </div>
+    <div class="texto">
+      <span class="num">Capítulo IV</span>
+      <h2>La frontera entre personas</h2>
+      <div class="meta"><span>4:20 – 5:40</span><i></i><span>Una dimensión humana</span></div>
+      <div class="voz">
+        <p>En los años cincuenta, un físico inglés llamado Lewis Fry Richardson intentaba entender por qué estallan las guerras. Se preguntó si los países con fronteras más largas pelean más. Para eso necesitaba medirlas.</p>
+        <p>Y encontró algo raro. España y Portugal no estaban de acuerdo en el largo de su propia frontera: 987 kilómetros y 1.214 kilómetros.</p>
+        <p>Nadie había mentido. Mientras más corta es la regla con que mides, más larga sale la línea.</p>
+        <p class="clave">Las líneas que dibujamos para separarnos no tienen un largo verdadero.</p>
+      </div>
+      <div class="pantalla"><b>EN PANTALLA</b> · Mapa antiguo de la península. Costa chilena desde un dron, de lejos a la espuma. El gráfico log-log da una dimensión estimada para el rango de escalas medido. Una persona de espaldas frente al mar.</div>
+    </div>
+  </div>
+  <span class="folio">09</span>
+</section>
+
+<!-- 10 · V LA VIDA -->
+<section class="p grano denso">
+  <div class="capitulo inv">
+    <div class="vis">
+      <img src="web/arbol.jpg" alt="" style="object-position:50% 100%">
+      <div class="leyenda"><b>CALCULADO</b> · Ramificación por una sola regla repetida doce veces. En el video se funde con un romanesco, un delta y un árbol bronquial reales.</div>
+    </div>
+    <div class="texto">
+      <span class="num">Capítulo V</span>
+      <h2>La vida</h2>
+      <div class="meta"><span>5:40 – 7:10</span><i></i><span>Una regla que explica formas vivas</span></div>
+      <div class="voz">
+        <p>En 2021, un grupo de biólogos mostró un mecanismo capaz de producir la forma del romanesco: un brote que empieza a convertirse en flor, no completa el camino y produce más brotes, que repiten lo mismo a una escala menor.</p>
+        <p>La naturaleza repite ciertos patrones de ramificación. Los ríos, las ramas y los rayos dibujan formas que se parecen, aunque cada uno siga sus propias reglas.</p>
+        <p>Tu cuerpo no guarda un plano con cada bronquio. Guarda una manera de dividirse: unas veintitrés generaciones, desde la tráquea hasta los alvéolos.</p>
+        <p class="clave">Mientras ves esto, estás respirando a través de ese árbol.</p>
+      </div>
+      <div class="pantalla"><b>EN PANTALLA</b> · Romanesco en macro, bosque valdiviano, escarcha en un vidrio, un rayo en cámara lenta. El latido vuelve, muy bajo.</div>
+    </div>
+  </div>
+  <span class="folio">10</span>
+</section>
+
+<!-- 11 · VI COSMOS -->
+<section class="p grano">
+  <div class="capitulo">
+    <div class="vis">
+      <img src="web/cosmos.jpg" alt="">
+      <div class="leyenda"><b>CALCULADO</b> · Red cósmica por la aproximación de Zel'dovich: hilos, nudos y vacíos que nacen de pequeñas fluctuaciones.</div>
+    </div>
+    <div class="texto">
+      <span class="num">Capítulo VI</span>
+      <h2>El cosmos</h2>
+      <div class="meta"><span>7:10 – 8:20</span><i></i><span>El infinito frente a lo físico</span></div>
+      <div class="voz">
+        <p>Si nos alejamos lo suficiente, las galaxias forman hilos, nudos y vacíos. Durante décadas se discutió si el universo entero era un fractal.</p>
+        <p>Los grandes catastros encontraron una respuesta: a partir de cierta escala, la distribución se vuelve pareja en promedio. Los hilos siguen ahí, pero el patrón deja de repetirse.</p>
+        <p>En la naturaleza, una forma fractal vale entre dos escalas. La matemática puede definir una que nunca llega a un último nivel de detalle.</p>
+        <p class="clave">Entonces, ¿qué clase de cosa es esta figura, que no termina en ningún lugar del universo?</p>
+      </div>
+      <div class="pantalla"><b>EN PANTALLA</b> · Campo profundo del James Webb que se funde con la simulación. Silencio. Corte al Mandelbrot, que sigue creciendo hacia adentro.</div>
+    </div>
+  </div>
+  <span class="folio">11</span>
+</section>
+
+<!-- 12 · VII MARIPOSA -->
+<section class="p grano">
+  <div class="capitulo inv">
+    <div class="vis" style="background:#000">
+      <img src="web/mariposa.jpg" alt="" style="object-fit:contain;padding:40px">
+      <div class="leyenda"><b>CALCULADO</b> · Mariposa de Hofstadter: energías permitidas de un electrón (horizontal) según el campo magnético (vertical), por la ecuación de Harper.</div>
+    </div>
+    <div class="texto">
+      <span class="num">Capítulo VII</span>
+      <h2>La mariposa</h2>
+      <div class="meta"><span>8:20 – 9:10</span><i></i><span>El poder de predicción</span></div>
+      <div class="voz">
+        <p>En 1976, Douglas Hofstadter calculó qué energías puede tener un electrón en un cristal bajo un campo magnético. Le salió una mariposa, con mariposas más pequeñas dentro de cada ala.</p>
+        <p>Durante décadas fue una predicción difícil de comprobar. En 2013, las superredes de moiré en grafeno mostraron sus primeras huellas. En 2025 se resolvió directamente su espectro fractal.</p>
+        <p class="clave">Primero la escribimos con lápiz. Después, la materia empezó a mostrar la misma estructura.</p>
+      </div>
+      <div class="pantalla"><b>EN PANTALLA</b> · Silencio total cuando la mariposa se completa. La calculada y la medida, superpuestas. Wigner, 1960: la eficacia irrazonable de la matemática.</div>
+    </div>
+  </div>
+  <span class="folio">12</span>
+</section>
+
+<!-- 13 · VIII MENTE -->
+<section class="p grano">
+  <div class="capitulo">
+    <div class="vis">
+      <img src="web/maquina.jpg" alt="">
+      <div class="leyenda"><b>CALCULADO</b> · 129.600 redes neuronales pequeñas, cada una entrenada con un par distinto de tasas de aprendizaje. Azul: aprendió. Crema y magenta: se desbordó.</div>
+    </div>
+    <div class="texto">
+      <span class="num">Capítulo VIII</span>
+      <h2>La mente</h2>
+      <div class="meta"><span>9:10 – 10:10</span><i></i><span>Una pregunta sobre aprender</span></div>
+      <div class="voz">
+        <p>Hoy las máquinas aprenden repitiendo una regla: corregir un poco, una y otra vez. En 2024, Jascha Sohl-Dickstein mostró que el límite entre aprender y desbordarse también es un fractal.</p>
+        <p>En el cerebro también se investiga si la actividad de las neuronas se mantiene cerca de un punto crítico, entre la calma excesiva y el desorden. Es una pregunta abierta.</p>
+        <p class="clave">¿Cuánto de lo que llamamos pensar depende de sistemas que funcionan justo al límite de su estabilidad?</p>
+      </div>
+      <div class="pantalla"><b>EN PANTALLA</b> · Neuronas reales al microscopio, lado a lado con el mapa de redes y la etiqueta <i>analogía</i>: una comparación visual, no una equivalencia.</div>
+    </div>
+  </div>
+  <span class="folio">13</span>
+</section>
+
+<!-- 14 · EPÍLOGO -->
+<section class="p grano">
+  <div class="capitulo inv">
+    <div class="vis">
+      <img src="web/punto.jpg" alt="">
+      <div class="leyenda"><b>CALCULADO</b> · La figura completa, alejándose hasta volver a ser el punto de luz del comienzo.</div>
+    </div>
+    <div class="texto">
+      <span class="num">Epílogo</span>
+      <h2>La frontera del conocimiento</h2>
+      <div class="meta"><span>10:10 – 11:10</span><i></i><span>Reunirlo todo</span></div>
+      <div class="voz">
+        <p>Una regla. Un borde. Y adentro, más de lo que podríamos recorrer.</p>
+        <p>Somos seres finitos, hechos de una cantidad contable de átomos, y aun así podemos pensar en una forma que no termina nunca.</p>
+        <p>Quizás el conocimiento tenga la misma forma. Cada respuesta abre un borde nuevo, más fino que el anterior.</p>
+        <p class="clave">No se llega al final. Se llega más adentro.</p>
+      </div>
+      <div class="pantalla"><b>EN PANTALLA</b> · La persona del capítulo IV, de noche frente al mar. Último silencio: solo el latido. El punto se estira y dibuja la marca B&amp;N LECTURES. El latido se resuelve en un acorde. Negro.</div>
+    </div>
+  </div>
+  <span class="folio">14</span>
+</section>
+
+<!-- 15 · RIGOR -->
+<section class="p rigor grano">
+  <div class="k">Rigor</div>
+  <h2>Tres tipos de afirmación, nunca mezclados</h2>
+  <p class="bajada">La película conecta fenómenos distintos con una intuición común, pero distingue en todo momento lo demostrado, lo observado y lo que es una lectura nuestra. Cada frase de la voz tiene una fuente.</p>
+  <div class="cols3">
+    <div class="caja"><span class="et" style="color:var(--cian)">Demostrado</span><h3>Resultados matemáticos</h3><ul>
+      <li>El borde del Mandelbrot tiene dimensión 2<i>Shishikura, Annals of Mathematics, 1998</i></li>
+      <li>El conjunto no es decidible con números reales exactos<i>Blum, Shub y Smale, 1989 · Blum y Smale, 1993</i></li>
+      <li>Julia unido si c está en M; polvo si está fuera<i>Fatou y Julia, 1918-1919</i></li>
+      <li>Conectividad local del borde: abierta<i>Conjetura MLC · Dudko y Lyubich, 2023-2025</i></li>
+    </ul></div>
+    <div class="caja"><span class="et" style="color:var(--durazno)">Observado</span><h3>Mediciones del mundo</h3><ul>
+      <li>Fluctuaciones fractales del latido sano<i>Goldberger y otros, PNAS, 2002</i></li>
+      <li>La costa depende de la regla<i>Richardson, 1961 · Mandelbrot, Science, 1967</i></li>
+      <li>Universo parejo en promedio a gran escala<i>Scrimgeour y otros, MNRAS, 2012</i></li>
+      <li>Mariposa en grafeno<i>Dean y otros, Nature, 2013 · Nature, 2025</i></li>
+      <li>Frontera fractal del entrenamiento<i>Sohl-Dickstein, 2024</i></li>
+    </ul></div>
+    <div class="caja"><span class="et" style="color:var(--magenta)">Interpretación</span><h3>Lecturas propias</h3><ul>
+      <li>Lo vivo parece habitar en el borde<i>Se monta sin gráficos, como lectura personal</i></li>
+      <li>El conocimiento tendría la forma de un fractal<i>Se dice con «quizás»</i></li>
+      <li>El cerebro cerca de un punto crítico<i>Hipótesis en debate · Beggs y Plenz, 2003</i></li>
+      <li>¿Por qué funciona la matemática?<i>Pregunta abierta · Wigner, 1960</i></li>
+    </ul></div>
+  </div>
+  <img class="marca" src="web/lectures-logo.png" alt="B&amp;N Lectures"></span><span class="folio">15</span>
+</section>
+
+<!-- 16 · PRODUCCIÓN -->
+<section class="p grano">
+  <div class="prod">
+    <div>
+      <div class="k">Producción</div>
+      <h2>Filmado en Chile, calculado en casa</h2>
+      <h4>Para filmar</h4>
+      <ul>
+        <li>Costa chilena desde dron, de lejos hasta la espuma</li>
+        <li>Una persona de espaldas frente al mar, de día y de noche</li>
+        <li>Romanesco en macro sobre negro; escarcha en un vidrio</li>
+        <li>Helechos y árboles del bosque valdiviano</li>
+        <li>El sonido real de un corazón</li>
+      </ul>
+      <h4>Archivo abierto</h4>
+      <ul>
+        <li>PhysioNet · James Webb (ESA/NASA) · Landsat · mapas de dominio público</li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="margin-top:44px">Simulaciones</h4>
+      <ul>
+        <li>Mandelbrot con zoom profundo por perturbación</li>
+        <li>Julia en vivo · costa medida con compás</li>
+        <li>Ramificación por reglas · red cósmica de Zel'dovich</li>
+        <li>Mariposa por la ecuación de Harper · grilla real de redes entrenadas</li>
+      </ul>
+      <h4>Sonido</h4>
+      <p>El latido del prólogo es el motivo de toda la música: se vuelve el pulso de la regla, reaparece bajo la vida y cierra el epílogo. Música compuesta a medida y cinco silencios totales.</p>
+      <h4>Paleta</h4>
+      <div class="paleta"><i style="background:#07060f;border:1px solid #333"></i><i style="background:#46185c"></i><i style="background:#b04080"></i><i style="background:#ee8c78"></i><i style="background:#fff4de"></i><i style="background:#96dee2"></i></div>
+      <h4>Próximo paso</h4>
+      <p>Un animatic de dos minutos, con el prólogo y el capítulo I completos, para probar el ritmo, los silencios y la primera aparición del conjunto.</p>
+    </div>
+  </div>
+  <img class="marca" src="web/lectures-logo.png" alt="B&amp;N Lectures"></span><span class="folio">16</span>
+</section>
+
+<!-- 17 · FUENTES -->
+<section class="p fuentes grano">
+  <div class="k">Fuentes</div>
+  <h2>De dónde sale cada frase</h2>
+  <div class="fl">
+    <p><span>Prólogo</span><b>Goldberger y otros</b>, Fractal dynamics in physiology: alterations with disease and aging, PNAS 99 (2002). Lipsitz y Goldberger, JAMA (1992). Datos: PhysioNet.</p>
+    <p><span>I</span><b>Penrose</b>, La nueva mente del emperador (1989), capítulo «Matemática y realidad».</p>
+    <p><span>II</span><b>Shishikura</b>, The Hausdorff dimension of the boundary of the Mandelbrot set and Julia sets, Annals of Mathematics 147 (1998).</p>
+    <p><span>II</span><b>Blum, Shub y Smale</b> (1989); <b>Blum y Smale</b> (1993). Matiz de modelo: Hertling (2005).</p>
+    <p><span>II</span><b>Conjetura MLC</b>: Douady y Hubbard; Dudko y Lyubich, arXiv 2309.02107; Dudko, arXiv 2512.24171.</p>
+    <p><span>IV</span><b>Richardson</b>, Statistics of Deadly Quarrels y estudio de fronteras (1961). <b>Mandelbrot</b>, How Long Is the Coast of Britain?, Science (1967).</p>
+    <p><span>V</span><b>Azpeitia y otros</b>, Cauliflower fractal forms arise from perturbations of floral gene networks, Science 373 (2021). <b>Weibel</b>, Morphometry of the Human Lung (1963).</p>
+    <p><span>VI</span><b>Scrimgeour y otros</b>, The WiggleZ Dark Energy Survey: the transition to large-scale cosmic homogeneity, MNRAS 425 (2012).</p>
+    <p><span>VII</span><b>Hofstadter</b>, Physical Review B (1976). <b>Dean y otros</b>, Nature 497 (2013); Ponomarenko y otros, Nature 497 (2013); Hunt y otros, Science 340 (2013). Nature 639 (2025).</p>
+    <p><span>VII</span><b>Wigner</b>, The Unreasonable Effectiveness of Mathematics in the Natural Sciences (1960).</p>
+    <p><span>VIII</span><b>Sohl-Dickstein</b>, The boundary of neural network trainability is fractal, arXiv 2402.06184 (2024).</p>
+    <p><span>VIII</span><b>Beggs y Plenz</b>, J. Neurosci. (2003); Wilting y Priesemann, revisión de 25 años (2019).</p>
+  </div>
+  <img class="marca" src="web/lectures-logo.png" alt="B&amp;N Lectures"></span><span class="folio">17</span>
+</section>
+
+<!-- 18 · CIERRE -->
+<section class="p cierre grano">
+  <img class="f" src="web/punto.jpg" alt="">
+  <div class="c">
+    <p class="frase">Cada respuesta abre<br><span>un borde nuevo.</span></p>
+    <img class="m" src="web/lectures-logo.png" alt="B&amp;N Lectures"></span>
+    <div class="k">B&amp;N Lectures · La frontera</div>
+  </div>
+</section>
+
+</body>
+</html>

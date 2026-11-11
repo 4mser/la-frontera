@@ -1,12 +1,12 @@
 # Solo código, guiones y dirección. El material pesado (renders, fotos, videos, audio, datos de terceros) queda fuera.
-node_modules/
+node_modules
 __pycache__/
 .DS_Store
 *.log
 public/
 out/
 respaldos/
-pylib/
+pylib
 material-prologo/
 archivo/
 animatic/datos/natural-earth/

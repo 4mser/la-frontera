@@ -1,0 +1,94 @@
+[
+ {
+  "ep": 1,
+  "l1": "NO TIENE",
+  "l2": "FONDO",
+  "cap": "APERTURA · I",
+  "z": 1.15,
+  "x": 22,
+  "y": 0
+ },
+ {
+  "ep": 2,
+  "l1": "NADIE SABE",
+  "l2": "SU ÁREA",
+  "cap": "II",
+  "z": 1.4,
+  "x": 24,
+  "y": 8
+ },
+ {
+  "ep": 3,
+  "l1": "¿CUÁNTO MIDE",
+  "l2": "UNA FRONTERA?",
+  "cap": "III",
+  "z": 1.35,
+  "x": 30,
+  "y": 4
+ },
+ {
+  "ep": 4,
+  "l1": "NADIE LA",
+  "l2": "DIBUJÓ",
+  "cap": "IV",
+  "z": 1.5,
+  "x": 22,
+  "y": 2
+ },
+ {
+  "ep": 5,
+  "l1": "NO ES UN",
+  "l2": "RELOJ",
+  "cap": "V",
+  "z": 1.6,
+  "x": 30,
+  "y": 8
+ },
+ {
+  "ep": 6,
+  "l1": "EL CAOS",
+  "l2": "TIENE FORMA",
+  "cap": "VI",
+  "z": 1.3,
+  "x": 24,
+  "y": 6,
+  "br": 1.2
+ },
+ {
+  "ep": 7,
+  "l1": "UNA ANTENA",
+  "l2": "FRACTAL",
+  "cap": "VII",
+  "z": 1.45,
+  "x": 24,
+  "y": 3
+ },
+ {
+  "ep": 8,
+  "l1": "¿UN UNIVERSO",
+  "l2": "FRACTAL?",
+  "cap": "VIII",
+  "z": 1.2,
+  "x": 22,
+  "y": 0
+ },
+ {
+  "ep": 9,
+  "l1": "¿POR QUÉ",
+  "l2": "FUNCIONA?",
+  "cap": "IX",
+  "z": 1.35,
+  "x": 44,
+  "y": 4,
+  "br": 1.1
+ },
+ {
+  "ep": 10,
+  "l1": "56 ÓRDENES",
+  "l2": "MÁS ABAJO",
+  "cap": "X · FINAL",
+  "z": 1.15,
+  "x": 22,
+  "y": 0
+ }
+]
